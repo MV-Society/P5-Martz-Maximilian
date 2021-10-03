@@ -22,26 +22,8 @@
       // $---recupère l'élément liste dans le HTML---$
       const card = document.getElementById("liste")
 
-      // convertit le prix---$
       const price = convertPrice(produit.price);
 
-      // $---convertir le prix---$
-      function convertPrice(productPrice) {
-
-      // $---Déclare la variable---$
-      let price = `${productPrice}`;
-
-      // $---constructeur pour formater des nombres en fonction du locale ici fr---$
-      price = Intl.NumberFormat("fr-FR", {
-      style: "currency",
-      currency: "EUR",
-
-      // $---minimumFractionDigits le nombre minimum de chiffres de fraction à utiliser---$
-      minimumFractionDigits: 2,
-      }).format(price / 100);
-      return price;
-      }
- 
       // $---insérsion du HTML dans le document---$
   card.innerHTML += `
         <section class="card">
